@@ -1,9 +1,9 @@
 import { NextUIProvider } from "@nextui-org/react";
-import "./App.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Items from "./pages/Items";
 
 const Layout = () => {
     return (
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
+            },
+            {
+                path: "items",
+                element: <Items />,
             },
         ],
     },
