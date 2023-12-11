@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { useData } from "../hooks/useData";
+import ListItems from "../components/ListItems";
 
 const Items = () => {
     const [urlParams, setUrlParams] = useState<string>("characters");
     const { data, loading } = useData("characters");
+
     return (
-        <div>
-            {loading ? (
-                <>Loading...</>
-            ) : (
-                data[urlParams] &&
-                data[urlParams].map((item: any) => <div key={item.id}>{item.name}</div>)
-            )}
+        <div className="m-auto flex justify-center max-w-[1300px]">
+            {loading ? <>Loading...</> : <ListItems items={data[urlParams]} />}
         </div>
     );
 };

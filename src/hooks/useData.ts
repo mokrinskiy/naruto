@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export function useData(url: String) {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false);
+export function useData(url: string) {
+    const [data, setData] = useState<any>([]);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchData = async () => {
